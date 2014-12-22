@@ -11,7 +11,9 @@ from random import *
 #setLED("right", 0)
 
 
-
+# This function takes a picture input and determines which color each pixel is.
+# The conditional statements for finding colors are based on the pictures that our robot took, which were often dark.
+# At the end, it totals how much of each color there is and chooses the most dominant color as the color of the picture.
 def findColor(pic):
     green = 0
     yellow = 0
@@ -71,7 +73,7 @@ def findColor(pic):
     else:
         return "None"
 
-                
+# This was used to make the robot randomly turn in a direction.
 def turn():
     ranNum = randrange(2)
     if ranNum == 0:
@@ -83,7 +85,8 @@ def turn():
         turnBy(-90,"deg")
         setLED("left", 0)
 
-
+# This function is what ran and called the other functions.
+# The robot takes pictures, and based on the color of the picture it took, it will do different movements.
 def stopLight():
     while True:
         aPic = takePicture()
@@ -102,11 +105,3 @@ def stopLight():
             beep(1,800)
             return None
 
-redPic = makePicture("Red.png")
-greenPic = makePicture("green.png")
-yellowPic = makePicture("yellow.png")
-whitePic = makePicture("white.png")
-#picture = takePicture()          
-#print(findColor(picture))
-picture = makePicture("/Users/alexherbig/Documents/Pictures/test.jpg")  
-print(findColor(picture))
