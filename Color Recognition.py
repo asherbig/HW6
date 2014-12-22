@@ -5,8 +5,8 @@
 from Myro import *
 from random import *
 #init("/dev/tty.Fluke2-02A9-Fluke2")
-#init()
-#setPicSize("small")
+init()
+setPicSize("small")
 #setLED("left", 0)
 #setLED("right", 0)
 
